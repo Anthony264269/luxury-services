@@ -15,13 +15,13 @@ class JobsController extends AbstractController
             'controller_name' => 'JobsController',
         ]);
     }
+// deuxieme rout e pour le detail d' un job!!!!!!!!!!!!!!!!!!!!!!!!!A FAIRE PAR L4 ID JE PENSE
+    #[Route('/jobs/show', name: 'app_show')]
+    public function show(): Response
+    {
+        return $this->render('jobs/show.html.twig', [
+            'controller_name' => 'JobsController',
+        ]);
+    }
 
-
-    // #[Route('/jobs', name: 'app_jobs')]deuxieme rout e pour le detail d' un job!!!!!!!!!!!!!!!!!!!!!!!!!A FAIRE PAR L4 ID JE PENSE
-    // public function index(): Response
-    // {
-    //     return $this->render('jobs/index.html.twig', [
-    //         'controller_name' => 'JobsController',
-    //     ]);
-    // }
 }

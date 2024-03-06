@@ -14,7 +14,7 @@
 		name="csrf-token" content="utSEZUUxgneXBCQY5My9Djz8rVhqLiG7PLq3ThDA">
 		<!--  favicon -->
 		<link rel="shortcut icon" href="assets/img/luxury-services-logo.png">
-
+{% block metaEtLinksSupplementaire %} {% endblock %}
 		<script>
 			window.isMobile = (function () {
 var check = false;
@@ -106,39 +106,40 @@ $(handler);
 							</div>
 							<div class="nav-overlay" id="overlay">
 								<nav class="overlay-menu">
-									<ul>
-										<li>
-											<a href="/">Home</a>
-										</li>
-										<li>
-											<a href="/templates/jobs/index.html">Jobs Offers</a>
-										</li>
-										<li>
-											<a href="/templates/compagny.html">About Us</a>
-										</li>
-										<li>
-											<a href="/templates/contact.html">Contact</a>
-										</li>
-										<li>-</li>
-										<li>
-											<a href="/templates/auth/profile.html">Profile</a>
-										</li>
-										<li>
-											<a href="/logout.html">Logout</a>
-										</li>
-									</ul>
-								</nav>
+					<ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li>
+							<a href="{{ path('app_jobs')}}">Jobs Offers</a>
+						</li>
+						<li>
+							<a href="{{ path('app_compagny')}}">About Us</a>
+						</li>
+						<li>
+							<a href="{{ path('app_contact')}}">Contact</a>
+						</li>
+						
+						<li>
+							<a href="{{ path('app_profile')}}">Profile</a>
+						</li>
+						<li>
+							<a href="/logout.html">Logout</a>
+						</li>
+					</ul>
+				</nav>
+
 							</div>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="menuzord-menu pull-right light" role="navigation">
 								<li class=" dropdown">
-									<a target="_self" href="/templates/auth/login.html">
+									<a target="_self" href="/login">
 										<span>Login</span>
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/templates/auth/register.html" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
+									<a target="_self" href="/register" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
 										<span>Sign Up</span>
 									</a>
 
@@ -152,19 +153,19 @@ $(handler);
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/templates/jobs/index.html">
+									<a target="_self" href="/jobs">
 										<i class=""></i>
 										<span>Jobs offers</span>
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/templates/compagny.html">
+									<a target="_self" href="/compagny">
 										<i class=""></i>
 										<span>About us</span>
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/templates/contact.html">
+									<a target="_self" href="/contact">
 										<i class=""></i>
 										<span>Contact</span>
 									</a>
