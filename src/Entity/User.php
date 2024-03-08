@@ -27,15 +27,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private array $roles = [];
 
-    /**
-     * @var string The hashed password
-     */
-    #[ORM\Column]
-    private ?string $password = null;
 
+   
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
+    #[ORM\Column]
+    private ?string $password = null;
+
+    #[ORM\OneToOne(targetEntity: Candidat::class, mappedBy: 'user', cascade: ['persist', 'remove'])]
+    private ?Candidat $candidat = null;
+
+
+
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +124,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): static
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getCandidat(): ?Candidat
+    {
+        return $this->candidat;
+    }
+
+    public function setCandidat(Candidat $candidat): static
+    {
+        // set the owning side of the relation if necessary
+        if ($candidat->getUser() !== $this) {
+            $candidat->setUser($this);
+        }
+
+        $this->candidat = $candidat;
 
         return $this;
     }
