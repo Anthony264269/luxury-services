@@ -22,6 +22,11 @@ class JobCategory
     #[ORM\OneToOne(mappedBy: 'jobCategory', cascade: ['persist', 'remove'])]
     private ?Job $job = null;
 
+    public function __toString()
+    {
+        return $this->getCategory();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -37,6 +37,9 @@ class Job
     #[ORM\ManyToOne(inversedBy: 'job')]
     private ?Candidacy $candidacy = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $jobType = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -134,6 +137,18 @@ class Job
     public function setCandidacy(?Candidacy $candidacy): static
     {
         $this->candidacy = $candidacy;
+
+        return $this;
+    }
+
+    public function getJobType(): ?string
+    {
+        return $this->jobType;
+    }
+
+    public function setJobType(?string $jobType): static
+    {
+        $this->jobType = $jobType;
 
         return $this;
     }

@@ -46,13 +46,19 @@ class Compagny
     {
         $this->jobs = new ArrayCollection();
     }
+    
+
+    public function __toString()
+    {
+        return $this->getCompagnyName();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCompagnyName(): ?string
+    public function getCompagnyName()
     {
         return $this->compagnyName;
     }
