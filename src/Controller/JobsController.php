@@ -34,11 +34,14 @@ class JobsController extends AbstractController
         ]);
     }
 // deuxieme rout e pour le detail d' un job!!!!!!!!!!!!!!!!!!!!!!!!!A FAIRE PAR L4 ID JE PENSE
-    #[Route('/jobs/show', name: 'app_show')]
-    public function show(): Response
+    #[Route('{id}/jobs/show', name: 'app_show')]
+    public function show(JobRepository $jobRepository, int $id): Response
     {
+        $job = $jobRepository->find($id);
         return $this->render('jobs/show.html.twig', [
             'controller_name' => 'JobsController',
+            'job' => $job,
+
         ]);
     }
 

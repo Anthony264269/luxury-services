@@ -42,7 +42,8 @@ class JobCrudController extends AbstractCrudController
             IntegerField::new('salary'),
             TextField::new('reference'),
             DateTimeField::new('createdAt'),
-            ChoiceField::new('jobType')->setChoices($jobType)
+            ChoiceField::new('jobType')->setChoices($jobType),
+            DateTimeField::new('startedAt')
         ];
     }
     
