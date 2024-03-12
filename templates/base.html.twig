@@ -136,18 +136,28 @@ $(handler);
 							</div>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							
+							{% if app.user %}
 							<ul class="menuzord-menu pull-right light" role="navigation">
+									<li class=" dropdown">
+									<a target="_self" href="/candidat">
+										<span>Profil</span>
+									</a>
+								</li>	
 								<li class=" dropdown">
+									<a target="_self" href="{{path('app_logout')}}" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
+										<span>Logout</span>
+									</a>
+
+								</li>
+							</ul>
+									{% else %}
+									<ul class="menuzord-menu pull-right light" role="navigation">
+									<li class=" dropdown">
 									<a target="_self" href="/login">
 										<span>Login</span>
 									</a>
-								</li>
-                    {# faire disparaitre les boutons login et sign up!!!!!!!!!!!!!! #}
-								{% if app.user %}
-									<li>hello</li>
-								{% endif %}
-
-
+								</li>	
 								<li class=" dropdown">
 									<a target="_self" href="/register" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
 										<span>Sign Up</span>
@@ -155,6 +165,13 @@ $(handler);
 
 								</li>
 							</ul>
+								{% endif %}
+								
+                    {# faire disparaitre les boutons login et sign up!!!!!!!!!!!!!! #}
+								
+
+
+							
 							<ul class="menuzord-menu pull-right light" role="navigation">
 								<li class="active dropdown">
 									<a target="_self" href="/">
@@ -163,7 +180,7 @@ $(handler);
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/jobs">
+									<a target="_self" href="/job">
 										<i class=""></i>
 										<span>Jobs offers</span>
 									</a>

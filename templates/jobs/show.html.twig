@@ -35,9 +35,12 @@
             <div class="container">
                 <div class="project-overview">
                     <div class="row mb-80">
+                    {% for job in jobs %}
+                        
+                    
                         <div class="col-xs-12 col-md-8">
-                            <p class="ref grey-text no-margin">Ref. 1007</p>
-                            <h2>2nd assistant position</h2>
+                            <p class="ref grey-text no-margin">{{job.reference}}</p>
+                            <h2>{{job.name}}</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec tortor venenatis, consequat quam et, varius lorem. Vivamus auctor vehicula odio, non scelerisque nibh cursus maximus. Sed hendrerit eros libero, vel accumsan nisi sagittis sit amet. Vivamus vitae neque convallis, consectetur lectus ac, pellentesque massa. Morbi finibus faucibus lorem vel placerat. Vivamus neque ligula, lacinia ac arcu sed, egestas mattis felis. Pellentesque tincidunt nulla lorem, ut sollicitudin metus volutpat ut. Vivamus et dignissim elit. </p>
                             <p>Vivamus id congue massa. Praesent ornare ipsum dolor, ut semper sapien tempus non. Integer eget dui vehicula nisi rutrum interdum et id turpis. Nam eu mollis sem. Aenean in hendrerit neque. Morbi rhoncus lacinia risus ac mattis. Pellentesque a mauris sapien. Nunc sit amet accumsan massa. Nulla gravida porttitor luctus. Aliquam fringilla at quam non euismod. Phasellus eu gravida eros. Cras odio risus, blandit non suscipit sed, volutpat vitae nulla. In ultrices at leo sit amet interdum.</p>
                         </div>
@@ -53,7 +56,8 @@
                             </ul>
                             <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="#!">Apply for this job</a>
                             <div class="btn btn-block btn-success mt-30 waves-effect waves-light disabled">You have applied for this job</div>
-                        </div>
+                       {% endfor %}
+                       </div>
                     </div>
                 </div>
 

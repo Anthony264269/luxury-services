@@ -189,8 +189,9 @@
 							<div class="portfolio-item" data-groups='["all", "commercial"]'>
 								<div class="portfolio-wrapper">
 									<div class="card job-card">
-										<div class="card-content">
+										
 											{% for job in jobs %}
+											<div class="card-content">
 												<span class="title">
 													<span class="card-title">{{job.nameJob}}</span>
 													<span class="ref grey-text">{{job.reference}}</span>
@@ -200,7 +201,7 @@
 														<i class="material-icons">&#xE53E;</i>{{job.salary}}
 													</div>
 													<div class="meta">
-														<i class="material-icons">&#xE916;</i>{{job.createdAt}}
+														<i class="material-icons">&#xE916;</i>{{ job.createdAt|date('d-m-Y') }}
 													</div>
 													<div class="meta">
 														<i class="material-icons">&#xE55F;</i>{{job.location}}
