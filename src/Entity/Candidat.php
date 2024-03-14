@@ -86,6 +86,7 @@ class Candidat
     {
         $this->registratedAt = new DateTimeImmutable();
         $this->updatedAt = new DateTimeImmutable();
+        $this->deletedAt = new DateTimeImmutable();
     }
 
     public function getId(): ?int

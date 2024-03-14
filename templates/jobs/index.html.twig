@@ -40,6 +40,7 @@
                         <li class=" waves-effect waves-light" data-group="fashion">Fashion & luxury</li>
                         <li class=" waves-effect waves-light" data-group="management">Management & HR</li>
                     </ul>
+                    {% for job in jobs %}
                     <div class="portfolio portfolio-with-title col-2 gutter mt-30">
 
                         
@@ -47,7 +48,7 @@
                             <div class="portfolio-wrapper">
                                 <div class="card job-card">
                                 
-                                {% for job in jobs %}
+                                0
                                     <div class="card-content">
                                         <span class="title">
                                             <span class="card-title">{{job.nameJob}}</span>
@@ -70,12 +71,13 @@
                                         <a class="btn btn-md primary border waves-effect waves-dark" href="{{path('app_show', {id: job.id})}}">Details</a>
                                         <a class="btn btn-md primary waves-effect waves-light" href="#!">Apply</a>
                                     </div>  
-                                    {% endfor %}
+                                    
                                 </div>
                             </div>
                         </div>
                         <div class="no-item"></div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </section>

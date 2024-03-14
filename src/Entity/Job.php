@@ -28,6 +28,9 @@ class Job
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
+    #[ORM\Column]
+    private ?\DateTimeImmutable $startedAt = null;
+
     #[ORM\Column(length: 255)]
     private ?string $reference = null;
 
@@ -105,6 +108,18 @@ class Job
         return $this;
     }
 
+    public function getStartedAt(): ?\DateTimeImmutable
+    {
+        return $this->startedAt;
+    }
+
+    public function setStartedAt(\DateTimeImmutable $startedAt): static
+    {
+        $this->startedAt = $startedAt;
+
+        return $this;
+    }
+
     public function getReference(): ?string
     {
         return $this->reference;
@@ -152,4 +167,6 @@ class Job
 
         return $this;
     }
+
+    
 }

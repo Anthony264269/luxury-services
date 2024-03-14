@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Candidacy;
 use App\Entity\Compagny;
+use App\Entity\Experience;
+use App\Entity\Gender;
 use App\Entity\Job;
 use App\Entity\JobCategory;
 use App\Entity\User;
@@ -47,10 +49,12 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('User', 'far fa-laugh-beam', User::class);
-        yield MenuItem::linkToCrud('Compagny', '	fas fa-school', Compagny::class);
+        yield MenuItem::linkToCrud('Compagny', 'fas fa-school', Compagny::class);
         yield MenuItem::linkToCrud('Job', 'fas fa-hammer', Job::class);
         yield MenuItem::linkToCrud('JobCategory', 'fas fa-sync-alt', JobCategory::class);
         yield MenuItem::linkToCrud('Candidacy', 'fas fa-file-alt', Candidacy::class);
+        yield MenuItem::linkToCrud('Genre', 'fas fa-file-alt', Gender::class);
+        yield MenuItem::linkToCrud('Experience', 'fas fa-file-alt', Experience::class);
 
 
     }

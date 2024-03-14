@@ -184,13 +184,15 @@
 							<li class=" waves-effect waves-light" data-group="fashion">Fashion & luxury</li>
 							<li class=" waves-effect waves-light" data-group="management">Management & HR</li>
 						</ul>
-						<div class="portfolio portfolio-with-title col-2 gutter mt-30">
+						{% for job in jobs %}
+							<div class="portfolio portfolio-with-title col-2 gutter mt-30">
 
-							<div class="portfolio-item" data-groups='["all", "commercial"]'>
-								<div class="portfolio-wrapper">
-									<div class="card job-card">
-										
-											{% for job in jobs %}
+
+								<div class="portfolio-item" data-groups='["all", "commercial"]'>
+									<div class="portfolio-wrapper">
+										<div class="card job-card">
+
+
 											<div class="card-content">
 												<span class="title">
 													<span class="card-title">{{job.nameJob}}</span>
@@ -198,33 +200,40 @@
 												</span>
 												<div class="metas mb-20">
 													<div class="meta">
-														<i class="material-icons">&#xE53E;</i>{{job.salary}}
+														<i class="material-icons">&#xE53E;</i>
+														{{job.salary}};
 													</div>
 													<div class="meta">
-														<i class="material-icons">&#xE916;</i>{{ job.createdAt|date('d-m-Y') }}
+														<i class="material-icons">&#xE916;</i>
+														{{ job.createdAt|date('d-m-Y') }}
 													</div>
 													<div class="meta">
-														<i class="material-icons">&#xE55F;</i>{{job.location}}
+														<i class="material-icons">&#xE55F;</i>
+														{{job.location}}
 													</div>
 												</div>
 												<p class="truncate-text">Nulla interdum, erat et mollis eleifend, urna turpis pellentesque dolor, sed rhoncus erat est sit amet diam. Aliquam dignissim ipsum nec lorem pulvinar.</p>
 											</div>
+											<div class="card-action">
+												<a class="btn btn-md primary border waves-effect waves-dark" href="{{path('app_show', {id: job.id})}}">Details</a>
+												<a class="btn btn-md primary waves-effect waves-light" href="#!">Apply</a>
+											</div>
 										</div>
-									{% endfor %}
-									<div class="no-item"></div>
-
+									</div>
 								</div>
-
-								<div class="text-center">
-									<a href="/templates/jobs/index.html" class="btn gradient secondary waves-effect waves-light mt-30">View all job offers</a>
-								</div>
+								<div class="no-item"></div>
 							</div>
+						{% endfor %}
+						<div class="text-center">
+							<a href="{{ path('app_jobs')}}" class="btn gradient secondary waves-effect waves-light mt-30">View all job offers</a>
 						</div>
-					</section>
-
+					</div>
 				</div>
+			</section>
 
-			</div>
+		</div>
+
+	</div>
 
 
-		{% endblock %}
+{% endblock %}

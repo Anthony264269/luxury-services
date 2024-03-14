@@ -140,7 +140,7 @@ $(handler);
 							{% if app.user %}
 							<ul class="menuzord-menu pull-right light" role="navigation">
 									<li class=" dropdown">
-									<a target="_self" href="/candidat">
+									<a target="_self" href="{{path('app_profile')}}">
 										<span>Profil</span>
 									</a>
 								</li>	
@@ -152,19 +152,28 @@ $(handler);
 								</li>
 							</ul>
 									{% else %}
-									<ul class="menuzord-menu pull-right light" role="navigation">
+									
+									
+								<ul class="menuzord-menu pull-right light" role="navigation">
+									<li class=" dropdown">
+									<a target="_self" href="{{path('app_profile')}}">
+										<span>Profil</span>
+									</a>
+								</li>
+								
 									<li class=" dropdown">
 									<a target="_self" href="/login">
 										<span>Login</span>
-									</a>
-								</li>	
+									</a></li>
 								<li class=" dropdown">
 									<a target="_self" href="/register" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
 										<span>Sign Up</span>
 									</a>
 
 								</li>
-							</ul>
+							
+								</ul>
+								
 								{% endif %}
 								
                     {# faire disparaitre les boutons login et sign up!!!!!!!!!!!!!! #}
@@ -175,24 +184,24 @@ $(handler);
 							<ul class="menuzord-menu pull-right light" role="navigation">
 								<li class="active dropdown">
 									<a target="_self" href="/">
-										<i class=""></i>
 										<span>Home</span>
 									</a>
 								</li>
+								
 								<li class=" dropdown">
-									<a target="_self" href="/job">
-										<i class=""></i>
+									<a target="_self" href="{{ path('app_jobs')}}">
+										
 										<span>Jobs offers</span>
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/compagny">
-										<i class=""></i>
+									<a target="_self" href="{{ path('app_compagny')}}">
+										
 										<span>About us</span>
 									</a>
 								</li>
 								<li class=" dropdown">
-									<a target="_self" href="/contact">
+									<a target="_self" href="{{ path('app_contact')}}">
 										<i class=""></i>
 										<span>Contact</span>
 									</a>
