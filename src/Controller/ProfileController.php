@@ -35,7 +35,7 @@ class ProfileController extends AbstractController
         $form->handleRequest($request);
  
         if ($form->isSubmitted() && $form->isValid()){
-            dd($candidat);
+            // dd($candidat);
            $entityManager->flush();
         }
 
