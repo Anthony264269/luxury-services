@@ -1,4 +1,6 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
+
+
 
 {% block body %}
 <div class="base">
@@ -38,9 +40,7 @@
                         <li class=" waves-effect waves-light" data-group="fashion">Fashion & luxury</li>
                         <li class=" waves-effect waves-light" data-group="management">Management & HR</li>
                     </ul>
-                    <div class="portfolio portfolio-with-title col-2 gutter mt-30">
-
-					{% for job in jobs %}
+                   {% for job in jobs %}
                         <div class="portfolio-item" data-groups='["all", "commercial"]'>
                             <div class="portfolio-wrapper">
 									<div class="card job-card">
