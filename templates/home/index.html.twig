@@ -1,6 +1,4 @@
-{% extends 'base.html.twig' %}
-
-
+{% extends "base.html.twig" %}
 
 {% block body %}
 <div class="base">
@@ -40,24 +38,26 @@
                         <li class=" waves-effect waves-light" data-group="fashion">Fashion & luxury</li>
                         <li class=" waves-effect waves-light" data-group="management">Management & HR</li>
                     </ul>
-                   {% for job in jobs %}
+                    <div class="portfolio portfolio-with-title col-2 gutter mt-30">
+
+					{% for job in jobs %}
                         <div class="portfolio-item" data-groups='["all", "commercial"]'>
                             <div class="portfolio-wrapper">
 									<div class="card job-card">
 										<div class="card-content">
 											<span class="title">
-												<span class="card-title">2nd assistant position</span>
-												<span class="ref grey-text">Ref. 1062</span>
+												<span class="card-title">{{job.nameJob}}</span>
+												<span class="ref grey-text">{{job.reference}}</span>
 											</span>
 											<div class="metas mb-20">
 												<div class="meta">
-													<i class="material-icons">&#xE53E;</i>45k&euro;
+													<i class="material-icons">&#xE53E;</i>{{job.salary}};
 												</div>
 												<div class="meta">
-													<i class="material-icons">&#xE916;</i>2018-10-01
+													<i class="material-icons">&#xE916;</i>{{ job.createdAt|date('d-m-Y') }}
 												</div>
 												<div class="meta">
-													<i class="material-icons">&#xE55F;</i>Paris
+													<i class="material-icons">&#xE55F;</i>{{job.location}}
 												</div>
 											</div>
 											<p class="truncate-text">Nulla interdum, erat et mollis eleifend, urna turpis pellentesque dolor, sed rhoncus erat est sit amet diam. Aliquam dignissim ipsum nec lorem pulvinar.</p>
